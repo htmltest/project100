@@ -7,9 +7,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,500i,700,700i,900&amp;subset=cyrillic" />
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
+        <link rel="stylesheet" href="js/chosen/chosen.css" />
 
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/slick/slick.min.js"></script>
+        <script src="js/jquery.maskedinput.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/chosen/chosen.jquery.min.js"></script>
         <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=device-width" />
@@ -122,42 +127,6 @@
                         <div class="content-img-with-text-descr">Действительно, максимальное отклонение поступательно вращает тангаж. Любое возмущение затухает, если штопор участвует в погрешности определения курса меньше, чем твердый гироинтегратор.</div>
                     </div>
                     <p>Ось собственного вращения стабилизирует небольшой центр подвеса, игнорируя силы вязкого трения. Кожух интегрирует твердый альтиметр, при котором центр масс стабилизируемого тела занимает верхнее положение. Степень свободы связывает гирокомпас. Однако исследование задачи в более строгой постановке показывает, что кинематическое уравнение Эйлера определяет небольшой период.</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Коллекция</th>
-                                <th>Концентрация</th>
-                                <th>Объём</th>
-                                <th>Ароматика</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Gangster</td>
-                                <td>Deodorant parfume</td>
-                                <td>75</td>
-                                <td>Цитрусовый</td>
-                            </tr>
-                            <tr>
-                                <td>Emporium</td>
-                                <td>Deodorant parfume</td>
-                                <td>100</td>
-                                <td>Акватический</td>
-                            </tr>
-                            <tr>
-                                <td>Ascania</td>
-                                <td>Deodorant parfume</td>
-                                <td>75, 95, 100</td>
-                                <td>Цветочный</td>
-                            </tr>
-                            <tr>
-                                <td>Brocard Studio</td>
-                                <td>Deodorant parfume</td>
-                                <td>45</td>
-                                <td>Цитрусовый</td>
-                            </tr>
-                        </tbody>
-                    </table>
 
                     <table>
                         <tbody>
@@ -227,6 +196,91 @@
                     </table>
 
                     <h4>Форма: H4</h4>
+
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <div class="form-success">
+                            <div class="form-success-title">Ваше сообщение успешно отправлено!</div>
+                            <div class="form-success-text">Мы свяжемся с вами в близжайший рабочий день.</div>
+                        </div>
+
+                        <div class="form-error">
+                            <div class="form-error-title">Ваше сообщение не было отправлено</div>
+                            <div class="form-error-text">Заполните все обязательные поля.</div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label">Ваше имя</div>
+                            <div class="form-input"><input type="text" name="name" value="" class="required" /></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label">Электронная почта</div>
+                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label">Ароматика</div>
+                            <div class="form-select">
+                                <select name="select1" data-placeholder="Выбрать" class="required">
+                                    <option value=""></option>
+                                    <option value="1">Цитрусовый</option>
+                                    <option value="2">Яблочный</option>
+                                    <option value="3">Очень ароматный</option>
+                                    <option value="4">Деревянный</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label">Ароматика</div>
+                            <div class="form-select">
+                                <select name="select2" data-placeholder="Выбрать">
+                                    <option value=""></option>
+                                    <option value="1" selected="selected">Цитрусовый</option>
+                                    <option value="2">Яблочный</option>
+                                    <option value="3">Очень ароматный</option>
+                                    <option value="4">Деревянный</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-file">
+                                <div class="form-file-input"><span class="form-file-input-text">Прикрепить файл</span><input type="file" name="file" class="required" /></div>
+                                <div class="form-file-name"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label">Отправить отчёт?</div>
+                            <div class="form-checkbox"><label><input type="checkbox" name="checkbox1" class="required" /><span class="form-checkbox-icon"></span><span class="form-checkbox-text">Да</span></label></div>
+                            <div class="form-checkbox"><label><input type="checkbox" name="checkbox2" checked="checked" /><span class="form-checkbox-icon"></span><span class="form-checkbox-text">Нет</span></label></div>
+                            <div class="form-radio"><label><input type="radio" name="radio" checked="checked" /><span class="form-radio-icon"></span><span class="form-radio-text">Возможно</span></label></div>
+                            <div class="form-radio"><label><input type="radio" name="radio" /><span class="form-radio-icon"></span><span class="form-radio-text">Нет</span></label></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label">Текстовое поле</div>
+                            <div class="form-input"><textarea name="comment" rows="4" cols="10" class="required"></textarea></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-submit">
+                                <input type="submit" value="Отправить сообщение" />
+                            </div>
+                            <div class="form-reset">
+                                <a href="#">Сбросить</a>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p>
+                        <div class="file-link"><a href="#">Скачать одним файлом</a> <img src="images/file-pdf.png" alt="" /> pdf, 256 кб.</div>
+                        <div class="file-link"><a href="#">Скачать одним файлом</a> <img src="images/file-doc.png" alt="" /> doc, 256 кб.</div>
+                        <div class="file-link"><a href="#">Скачать одним файлом</a> <img src="images/file-xls.png" alt="" /> xls, 256 кб.</div>
+                        <div class="file-link"><a href="#">Скачать одним файлом</a> <img src="images/file-ppt.png" alt="" /> ppt, 256 кб.</div>
+                        <div class="file-link"><a href="#">Скачать одним файлом</a> <img src="images/file-jpg.png" alt="" /> jpg, 256 кб.</div>
+                    </p>
 
                     <!-- gallery -->
                     <div class="gallery">

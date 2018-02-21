@@ -2,7 +2,7 @@
 
 html {min-width:1200px; height:100%}
 
-body {min-width:1200px; height:100%; margin:0; padding:0; font:300 16px/23px Roboto, sans-serif; color:#000; background:#f7f7f7; -webkit-text-size-adjust:100%}
+body {min-width:1200px; height:100%; margin:0; padding:0; font:300 16px/23px Roboto, sans-serif; color:#000; background:#fff; -webkit-text-size-adjust:100%}
 
 a {color:#000; transition:color .3s}
 a:hover {color:#57aca4}
@@ -18,10 +18,10 @@ h2 {font-weight:100; font-size:45px; line-height:50px; margin:37px 0 32px 0; pad
 h3 {font-weight:100; font-size:35px; line-height:40px; margin:41px 0 28px 0; padding:0}
 h4 {font-weight:100; font-size:30px; line-height:35px; margin:41px 0 28px 0; padding:0}
 p {margin:23px 0; padding:0}
-blockquote {font-style:italic; margin:26px 0; padding:0 200px 0 107px; position:relative}
-blockquote:before {content:"“"; position:absolute; left:43px; top:-9px; font-weight:900; font-size:100px; line-height:100px; color:#81d8d0}
-blockquote:after {content:"”"; position:absolute; right:126px; top:-9px; font-weight:900; font-size:100px; line-height:100px; color:#81d8d0}
-ul {margin:23px 0; padding:0; list-style:none}
+blockquote {font-style:italic; margin:26px 0; padding:0 200px 0 100px; position:relative}
+blockquote:before {content:"“"; position:absolute; left:37px; top:-9px; font-weight:900; font-size:100px; line-height:100px; color:#81d8d0}
+blockquote:after {content:"”"; position:absolute; right:140px; top:-9px; font-weight:900; font-size:100px; line-height:100px; color:#81d8d0}
+ul {margin:23px 0 23px 30px; padding:0; list-style:none}
 ul li {margin:12px 0; padding:0 0 0 23px; position:relative}
 ul li:before {content:""; display:block; width:6px; height:6px; border:1px solid #949494; background:#949494; border-radius:50%; position:absolute; left:0; top:8px}
 li ul {margin:12px 0}
@@ -34,18 +34,92 @@ li ol {margin-left:15px}
 ol li:before {content:counter(point)'.'; counter-increment:point 1; position:absolute; left:0; top:0}
 ol li ol li {padding:0 0 0 29px}
 ol li ol li:before {content:counter(point)'.'counter(subpoint)'.'; counter-increment:subpoint 1}
-.wrapper table {width:96%; margin:40px 0 0 0; border-collapse:collapse}
-.wrapper table caption {font-size:25px; line-height:30px; font-weight:100; padding:9px 0 24px 0; text-align:left}
-.wrapper th {vertical-align:top; text-align:left; border:1px solid #eaeaea; background:#eaeaea; font-weight:500; font-size:17px; line-height:27px; padding:22px 0 24px 30px; color:#000}
+.wrapper table {width:90%; margin:40px 0 0 0; border-collapse:collapse; border-bottom:1px solid #d9d9d9}
+.wrapper table caption {font-size:25px; line-height:30px; font-weight:300; padding:9px 0 24px 0; text-align:left}
+.wrapper th {vertical-align:top; text-align:left; border-top:4px solid #81d8d0; border-bottom:1px solid #81d8d0; font-weight:500; font-size:17px; line-height:27px; padding:22px 0 24px 30px; color:#000}
 .wrapper th:last-child {padding-right:30px}
-.wrapper td {vertical-align:top; text-align:left; border:1px solid #d2d2d2; padding:22px 0 24px 30px}
+.wrapper td {vertical-align:top; text-align:left; border-top:1px solid #d9d9d9; padding:22px 0 24px 30px}
 .wrapper td:last-child {padding-right:30px}
+.wrapper tbody tr:hover td {background:#f7f7f7; border-color:#f7f7f7}
+.wrapper tbody tr:hover+tr td {border-color:#f7f7f7}
 
-.cols {margin:23px -50px}
+.cols {margin:23px -15px}
 .cols:after {content:""; display:block; clear:both; height:0}
-.col-half {float:left; width:50%; padding:0 50px; box-sizing:border-box}
+.col-half {float:left; width:50%; padding:0 15px; box-sizing:border-box}
 .cols p:first-child {margin-top:0}
 .cols p:last-child {margin-bottom:0}
+
+form {margin:23px 0; padding:0}
+
+.form-success {margin:31px 0; font-size:17px; font-style:italic}
+.form-success-title {color:#57aca4; font-style:normal; font-size:30px; line-height:30px; text-transform:uppercase; padding:0 0 11px 0}
+
+.form-error {margin:31px 0; font-size:17px; font-style:italic}
+.form-error-title {color:#be0000; font-style:normal; font-size:30px; line-height:30px; text-transform:uppercase; padding:0 0 11px 0}
+
+.form-row {margin:23px 0}
+.form-row:after {content:""; display:block; clear:both; height:0}
+
+.form-label {font-size:17px; padding:0 0 5px 0}
+
+.form-input {border:1px solid #ccc; position:relative}
+.form-input.error {border-color:#ebb2b2}
+.form-input input,
+.form-input textarea {position:relative; border:1px solid #fff; font:300 17px/24px Roboto, sans-serif; color:#000; vertical-align:top; margin:0; padding:6px 16px; width:100%; height:38px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none}
+.form-input textarea {height:auto; resize:none; overflow:auto}
+.form-input input.error,
+.form-input textarea.error {border-color:#ebb2b2}
+.form-input input:focus,
+.form-input textarea:focus {border-color:#b7b7b7}
+.form-input label.error {position:absolute; right:-11px; top:9px; white-space:nowrap; font-size:13px; line-height:36px; height:36px; color:#fff; background:#be0000; padding:0 26px 0 15px}
+.form-input label.error:after {content:""; display:block; position:absolute; left:-18px; top:0; width:0; height:0; border-right:18px solid #be0000; border-top:18px solid transparent; border-bottom:18px solid transparent}
+
+.form-select select {position:relative; border:1px solid #fff; font:300 17px/24px Roboto, sans-serif; color:#000; vertical-align:top; margin:0; padding:6px 16px; width:100%; height:38px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none}
+.form-select label.error {display:none !important}
+
+.form-checkbox {display:inline-block; vertical-align:top; margin:8px 15px 0 0}
+.form-checkbox label {float:left; margin:0; cursor:pointer; position:relative; padding:0 0 0 30px; display:block; font-weight:normal}
+.form-checkbox input {display:none}
+.form-checkbox-icon {display:block; position:absolute; left:0; top:2px; width:18px; height:18px; border:1px solid #f2f2f2; background:#f2f2f2 url(../images/checkbox.png) no-repeat -999px -999px}
+.form-checkbox label input:checked+.form-checkbox-icon,
+.form-checkbox label input:checked+label+.form-checkbox-icon {background-position:center}
+.form-checkbox label input.error+.form-checkbox-icon,
+.form-checkbox label input.error+label+.form-checkbox-icon {border-color:#ebb2b2}
+.form-checkbox label.error {display:none !important}
+
+.form-radio {display:inline-block; vertical-align:top; margin:8px 15px 0 0}
+.form-radio label {float:left; margin:0; cursor:pointer; position:relative; padding:0 0 0 30px; display:block; font-weight:normal}
+.form-radio input {display:none}
+.form-radio-icon {display:block; position:absolute; left:0; top:2px; width:18px; height:18px; border:1px solid #e6e6e6; border-radius:50%}
+.form-radio label input:checked+.form-radio-icon:after,
+.form-radio label input:checked+label+.form-radio-icon:after {content:""; display:block; width:10px; height:10px; position:absolute; left:4px; top:4px; border-radius:50%; background:#000}
+.form-radio label.error {display:none !important}
+
+.form-file:after {content:""; display:block; clear:both}
+.form-file-input {float:left; width:145px; height:23px; background:url(../images/blank.gif); position:relative; overflow:hidden; line-height:23px; cursor:pointer; color:#57aca4}
+.form-file-input-text {border-bottom:1px dashed #57aca4}
+.form-file-input:hover .form-file-input-text {border-bottom:none}
+.form-file-input input {height:200px; position:absolute; top:0; right:0; opacity:0; cursor:pointer; font-size:200px; background:url(../images/blank.gif); -webkit-appearance:none}
+.error .form-file-input {color:#ebb2b2}
+.form-file-input label.error {display:none !important}
+.form-file-name {margin:0 0 0 170px; padding:0; font-size:13px}
+.form-file-progress-wrap {margin:0 0 0 170px; height:3px; background:#e5e5e5; position:relative; top:11px}
+.form-file-progress {width:0; height:3px; position:relative; background:#81d8d0}
+.form-file-progress.error {background:#ebb2b2}
+
+.form-submit {float:left; padding:17px 0 0 0}
+.form-submit input {display:inline-block; border-radius:0; background:#81d8d0; margin:0; padding:0 25px; overflow:visibile; outline:none; border:none; height:45px; box-sizing:border-box; color:#000; text-align:center; text-transform:uppercase; font:18px/45px Roboto, sans-serif; -webkit-appearance:none; cursor:pointer}
+.form-submit input:hover {background:#57aca4}
+.form-submit input:active {background:#000; color:#fff}
+
+.form-reset {float:left; padding:28px 0 0 30px; font-size:14px; text-transform:uppercase}
+.form-reset a {color:#000; text-decoration:none; border-bottom:1px dashed #000}
+.form-reset a:hover {border-bottom:none}
+
+.file-link {display:inline-block; vertical-align:top; margin:8px 25px 8px 0; font-style:italic; color:#404040; font-size:13px}
+.file-link a {font-size:15px; font-style:normal; color:#57aca4}
+.file-link a:hover {color:#000}
+.file-link img {vertical-align:middle; margin:-2px 7px 0 7px}
 
 .content-img-with-text {margin:33px 0}
 .content-img-with-text:after {content:""; display:block; clear:both; height:0}
